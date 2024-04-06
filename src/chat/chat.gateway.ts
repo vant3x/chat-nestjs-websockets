@@ -13,8 +13,8 @@ export class ChatGateway implements OnModuleInit {
   constructor(private readonly chatService: ChatService) {}
 
   onModuleInit() {
-    this.server.on('connection', (socket: Socket) => {
-      console.log('Cliente conectado: ', socket.id);
+    this.server.on('connection', (socket) => {
+      console.log(socket);
 
       socket.on('disconnect', () => {
         console.log('Cliente desconectado: ', socket.id);
